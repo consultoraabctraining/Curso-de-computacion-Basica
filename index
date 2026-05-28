@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Computación Básica | Microsoft</title>
+    
+    <!-- Cargar Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Cargar FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0078D4', // Azul de Microsoft
+                        secondary: '#2B579A',
+                        accent: '#25D366', // Verde de WhatsApp
+                        dark: '#1a1a1a',
+                        light: '#f8f9fa'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Importar fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0078D4 0%, #004d8a 100%);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        /* Efecto hover sutil para tarjetas */
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-sm fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl tracking-tight text-gray-900">ABC Training</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium transition-colors">Inicio</a>
+                    <a href="#objetivos" class="text-gray-600 hover:text-primary font-medium transition-colors">Objetivos</a>
+                    <a href="#pensum" class="text-gray-600 hover:text-primary font-medium transition-colors">Plan de Estudios</a>
+                    <a href="#precios" class="text-gray-600 hover:text-primary font-medium transition-colors">Precios</a>
+                    <a href="https://wa.me/59168811019?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20planes%20del%20curso%20de%20computaci%C3%B3n%20b%C3%A1sica" target="_blank" class="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-md flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar
+                    </a>
+                </div>
+                <!-- Menú móvil (simplificado) -->
+                <div class="flex md:hidden items-center">
+                    <a href="https://wa.me/59168811019?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20planes%20del%20curso%20de%20computaci%C3%B3n%20b%C3%A1sica" target="_blank" class="text-accent text-3xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-40 lg:pb-28 gradient-bg text-white relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white opacity-5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-400 opacity-10 blur-2xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/20 text-sm font-semibold tracking-wider mb-6 backdrop-blur-sm border border-white/30">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i> LICENCIAS OFICIALES DE MICROSOFT
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-tight">
+                    Curso de Computación Básica para la Nueva Generación
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed">
+                    Propuesta integral de clases de computación para niños, adolescentes y jóvenes. Aprendizaje ideal a través de actividades interactivas con plataformas oficiales.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#precios" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Ver Planes y Precios
+                    </a>
+                    <a href="#pensum" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all">
+                        Explorar Plan de Estudios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivos Section -->
+    <section id="objetivos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Objetivos del Programa</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">Nuestro enfoque garantiza un aprendizaje sólido y seguro en el entorno digital actual.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Objetivo 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-desktop text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Familiarización Integral</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Acercamos a los estudiantes al uso básico de la computadora y sus herramientas más comunes, construyendo una base de confianza y destreza tecnológica.
+                    </p>
+                </div>
+                <!-- Objetivo 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-regular fa-keyboard text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Habilidades Prácticas</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Desarrollo de habilidades en Mecanografía fluida y dominio de las aplicaciones clave de Microsoft Office: Word, Excel y PowerPoint.
+                    </p>
+                </div>
+                <!-- Objetivo 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-shield-halved text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Navegación Segura</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Introducción fundamental al uso responsable, ético y seguro de Internet, protegiendo su huella digital y aprovechando los recursos online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pensum y Duración Section -->
+    <section id="pensum" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Pensum -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Plan de Estudios</h2>
+                    <p class="text-lg text-gray-600 mb-8">Un recorrido completo por las herramientas esenciales del mundo digital, con licencias oficiales de Microsoft.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-solid fa-keyboard text-gray-400 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Mecanografía Computarizada</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-brands fa-windows text-blue-500 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Sistema Operativo Windows 10/11</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-solid fa-file-word text-blue-700 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Microsoft Word</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-solid fa-file-excel text-green-600 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Microsoft Excel</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-solid fa-file-powerpoint text-orange-600 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Microsoft PowerPoint</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                            <i class="fa-solid fa-globe text-blue-400 w-8 text-center text-xl"></i>
+                            <span class="ml-4 font-semibold text-gray-800 text-lg">Internet y Navegación Segura</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duración y Metodología -->
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-10 -mt-10"></div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 relative z-10 flex items-center">
+                        <i class="fa-regular fa-clock text-primary mr-3"></i> Duración del Curso
+                    </h3>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                            <h4 class="font-bold text-primary text-xl mb-2">Modalidad Regular</h4>
+                            <p class="text-gray-700 text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-days text-gray-400"></i> <strong>10 Meses</strong> de duración total.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-6 rounded-2xl border border-orange-100">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-orange-600 text-xl">Modalidad Intensiva</h4>
+                                <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Recomendado</span>
+                            </div>
+                            <p class="text-gray-700 text-lg flex items-center gap-2 mb-3">
+                                <i class="fa-solid fa-bolt text-gray-400"></i> <strong>3 a 5 Meses</strong> de duración total.
+                            </p>
+                            <p class="text-sm text-gray-600 bg-white p-3 rounded-lg inline-block border border-orange-200">
+                                Aumentando a <strong>2, 3 o 4 clases por semana</strong> para acelerar el aprendizaje.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-gray-100">
+                            <h4 class="font-bold text-gray-900 mb-3 text-lg">Metodología de Clase:</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>Preferiblemente <strong>1 estudiante por computadora</strong> para atención personalizada.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>No hay límite de estudiantes en total por grupo.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span>Grupos mixtos para niños, adolescentes y jóvenes.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios Section -->
+    <section id="precios" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Planes y Precios</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Los precios generales del servicio según la cantidad de días de clases. Sin límite de estudiantes por paquete.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                
+                <!-- Plan 1 Día -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover-card flex flex-col h-full relative">
+                    <div class="text-center mb-6">
+                        <span class="bg-gray-100 text-gray-600 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">Básico</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">1 Día / Semana</h3>
+                        <div class="text-primary">
+                            <span class="text-xl font-medium">Bs.</span>
+                            <span class="text-5xl font-extrabold tracking-tight">2500</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">Costo total del servicio</p>
+                    </div>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm xl:text-base">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Clases 1 vez por semana</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Duración de <strong>10 meses</strong></span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Acceso a todas las herramientas</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Estudiantes ilimitados</strong> en el horario</span></li>
+                    </ul>
+                    <a href="https://wa.me/59168811019?text=Me%20interesa%20el%20paquete%20de%20clases%20de%201%20d%C3%ADa%20por%20semana%20(2500%20Bs)%20del%20curso%20de%20computaci%C3%B3n." 
+                       target="_blank" 
+                       class="w-full bg-[#25D366] hover:bg-[#1ebd5b] text-white font-bold py-3.5 px-4 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-md">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contratar Plan
+                    </a>
+                </div>
+
+                <!-- Plan 2 Días -->
+                <div class="bg-gradient-to-b from-blue-50 to-white rounded-3xl p-8 shadow-xl border-2 border-primary transform scale-105 hover-card flex flex-col h-full relative z-10">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">Más Popular</span>
+                    </div>
+                    <div class="text-center mb-6 mt-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">2 Días / Semana</h3>
+                        <div class="text-primary">
+                            <span class="text-xl font-medium">Bs.</span>
+                            <span class="text-5xl font-extrabold tracking-tight">4800</span>
+                        </div>
+                        <p class="text-green-600 font-medium text-sm mt-2 bg-green-50 inline-block px-3 py-1 rounded-full border border-green-200">
+                            Ahorras 1000 bolivianos
+                        </p>
+                    </div>
+                    <ul class="text-gray-700 space-y-3 mb-8 flex-grow font-medium text-sm xl:text-base">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Clases 2 veces por semana</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>5 meses</strong> (Modalidad Intensiva)</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>10 meses</strong> (Regular) - Ideal para grupos grandes</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Estudiantes ilimitados</strong> en el horario</span></li>
+                    </ul>
+                    <a href="https://wa.me/59168811019?text=Me%20interesa%20el%20paquete%20de%20clases%20de%202%20d%C3%ADas%20por%20semana%20(4800%20Bs)%20del%20curso%20de%20computaci%C3%B3n." 
+                       target="_blank" 
+                       class="w-full bg-[#25D366] hover:bg-[#1ebd5b] text-white font-bold py-3.5 px-4 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contratar Plan
+                    </a>
+                </div>
+
+                <!-- Plan 3 Días -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover-card flex flex-col h-full">
+                    <div class="text-center mb-6">
+                        <span class="bg-gray-100 text-gray-600 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">Avanzado</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">3 Días / Semana</h3>
+                        <div class="text-primary">
+                            <span class="text-xl font-medium">Bs.</span>
+                            <span class="text-5xl font-extrabold tracking-tight">5750</span>
+                        </div>
+                        <p class="text-green-600 font-medium text-sm mt-2 bg-green-50 inline-block px-3 py-1 rounded-full border border-green-200">
+                            Ahorras 2000 bolivianos
+                        </p>
+                    </div>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm xl:text-base">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Clases 3 veces por semana</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>4 meses</strong> (Modalidad Intensiva)</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>10 meses</strong> (Regular) - Ideal para grupos grandes</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Estudiantes ilimitados</strong> en el horario</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Clases adicionales</strong> para mayor práctica</span></li>
+                    </ul>
+                    <a href="https://wa.me/59168811019?text=Me%20interesa%20el%20paquete%20de%20clases%20de%203%20d%C3%ADas%20por%20semana%20(5750%20Bs)%20del%20curso%20de%20computaci%C3%B3n." 
+                       target="_blank" 
+                       class="w-full bg-[#25D366] hover:bg-[#1ebd5b] text-white font-bold py-3.5 px-4 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-md">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contratar Plan
+                    </a>
+                </div>
+
+                <!-- Plan 4 Días -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover-card flex flex-col h-full">
+                    <div class="text-center mb-6">
+                        <span class="bg-gray-100 text-gray-600 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">Premium</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">4 Días / Semana</h3>
+                        <div class="text-primary">
+                            <span class="text-xl font-medium">Bs.</span>
+                            <span class="text-5xl font-extrabold tracking-tight">7200</span>
+                        </div>
+                        <p class="text-green-600 font-medium text-sm mt-2 bg-green-50 inline-block px-3 py-1 rounded-full border border-green-200">
+                            Ahorras 3400 bolivianos
+                        </p>
+                    </div>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm xl:text-base">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span>Clases 4 veces por semana</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>3 meses</strong> (Modalidad Intensiva)</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>10 meses</strong> (Regular) - Ideal para grupos grandes</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Estudiantes ilimitados</strong> en el horario</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> <span><strong>Práctica intensiva</strong> con seguimiento continuo</span></li>
+                    </ul>
+                    <a href="https://wa.me/59168811019?text=Me%20interesa%20el%20paquete%20de%20clases%20de%204%20d%C3%ADas%20por%20semana%20(7200%20Bs)%20del%20curso%20de%20computaci%C3%B3n." 
+                       target="_blank" 
+                       class="w-full bg-[#25D366] hover:bg-[#1ebd5b] text-white font-bold py-3.5 px-4 rounded-xl flex justify-center items-center gap-2 transition-colors shadow-md">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contratar Plan
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-gray-500 text-sm">
+                * Los descuentos mostrados representan el ahorro total aplicado sobre el costo global del paquete.
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificaciones Section -->
+    <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Texturas de fondo -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 bg-gray-800/50 p-10 rounded-3xl border border-gray-700 backdrop-blur-sm">
+                
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-32 h-32 bg-primary/20 rounded-full absolute -top-4 -left-4 animate-pulse"></div>
+                        <i class="fa-solid fa-award text-8xl text-yellow-500 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)] relative z-10"></i>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-bold mb-4">Certificación de Excelencia</h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        Reconocemos el esfuerzo y la dedicación. El curso incluye certificados oficiales para los estudiantes que <strong>aprueben con más del 51%</strong> de la nota y mantengan una <strong>asistencia mínima del 70%</strong> a las clases.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 flex items-center gap-3">
+                            <i class="fa-solid fa-building text-blue-400 text-xl"></i>
+                            <span class="font-medium">Consultora ABC Training</span>
+                        </div>
+                        <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 flex items-center gap-3">
+                            <i class="fa-brands fa-microsoft text-blue-400 text-xl"></i>
+                            <span class="font-medium">Microsoft (Directo)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="inline-block bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fa-solid fa-circle-info mr-2"></i>Costo de emisión de ambos certificados: <strong>20 Bs.</strong> por estudiante graduado.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 pt-16 pb-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <!-- Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="font-bold text-xl text-gray-900">ABC Training</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Brindando educación tecnológica de calidad para las nuevas generaciones, preparándolos para el futuro digital.</p>
+                </div>
+                
+                <!-- Enlaces rápidos -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4 text-lg">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-600 hover:text-primary transition-colors">Inicio</a></li>
+                        <li><a href="#pensum" class="text-gray-600 hover:text-primary transition-colors">Plan de Estudios</a></li>
+                        <li><a href="#precios" class="text-gray-600 hover:text-primary transition-colors">Planes y Precios</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contacto -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4 text-lg">Contacto Directo</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-user-tie text-primary mt-1 w-6"></i>
+                            <div>
+                                <p class="font-medium text-gray-800">Lic. Victor Elias Sellis Zeballos</p>
+                                <p class="text-sm text-gray-500">Encargado del curso</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-envelope text-primary w-6"></i>
+                            <a href="mailto:victorsellis@gmail.com" class="text-gray-600 hover:text-primary transition-colors break-all">victorsellis@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-phone text-primary w-6"></i>
+                            <a href="https://wa.me/59168811019" target="_blank" class="text-gray-600 hover:text-primary transition-colors">+591 68811019</a>
+                        </div>
+                        <a href="https://wa.me/59168811019?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20planes%20del%20curso%20de%20computaci%C3%B3n%20b%C3%A1sica" target="_blank" class="inline-flex items-center justify-center bg-[#25D366] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#1ebd5b] transition-colors mt-2 w-full sm:w-auto">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> ABC Training. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Lic. Victor Elias Sellis Zeballos</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para efecto de navbar al hacer scroll -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
